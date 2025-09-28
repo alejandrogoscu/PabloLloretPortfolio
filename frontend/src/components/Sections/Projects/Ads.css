@@ -1,0 +1,12 @@
+.ads-section {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.ads-section .horizontal-gallery {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  width: 100%;
+}

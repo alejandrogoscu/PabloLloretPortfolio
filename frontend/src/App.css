@@ -1,0 +1,27 @@
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.section-title h2 {
+  padding: 0 1.5rem;
+  font-family: var(--font-title);
+  font-size: 4rem;
+  white-space: nowrap;
+}
+
+.title-line {
+  height: 1px;
+  background-color: var(--orange);
+  flex-grow: 1;
+}
+
+@media (max-width: 640px) {
+  .section-title h2 {
+    font-size: 2.5rem;
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,94 @@
+body,
+a,
+button,
+input,
+i,
+textarea,
+select,
+[role='button'],
+label {
+  cursor: none !important;
+}
+
+.custom-cursor {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 999;
+  background-color: var(--white);
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.custom-cursor::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 35px;
+  height: 35px;
+  border: 2px solid var(--white);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-sizing: border-box;
+  opacity: 0.7;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* Regla base para hover - cambia tamaño siempre */
+.custom-cursor.custom-cursor--hover {
+  width: 20px;
+  height: 20px;
+}
+
+.custom-cursor.custom-cursor--hover::after {
+  width: 33px;
+  height: 33px;
+}
+
+/* Color negro cuando está en hover y NO en área light */
+.custom-cursor.custom-cursor--hover:not(.custom-cursor--light) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.custom-cursor.custom-cursor--hover:not(.custom-cursor--light)::after {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Regla para dark - se aplica cuando está sobre elementos dark */
+.custom-cursor.custom-cursor--dark:not(.custom-cursor--light) {
+  background-color: var(--black);
+}
+
+.custom-cursor.custom-cursor--dark:not(.custom-cursor--light)::after {
+  border-color: var(--black);
+}
+
+/* Hover en elementos interactivos dentro de área dark */
+.custom-cursor.custom-cursor--hover.custom-cursor--dark:not(.custom-cursor--light) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.custom-cursor.custom-cursor--hover.custom-cursor--dark:not(.custom-cursor--light)::after {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Forzar color blanco cuando está en área light (sin importar hover o dark) */
+.custom-cursor.custom-cursor--light {
+  background-color: var(--white);
+}
+
+.custom-cursor.custom-cursor--light::after {
+  border-color: var(--white);
+}
+
+.custom-cursor.custom-cursor--hover.custom-cursor--light {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.custom-cursor.custom-cursor--hover.custom-cursor--light::after {
+  border-color: rgba(255, 255, 255, 0.3);
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "El desentierro",
+    "type": "Largometraje",
+    "logline": "La repentina aparición de una mujer albanesa en un pueblo de Levante provoca que Jordi, recién llegado de Argentina para asistir al entierro de un importante Conseller, decida investigar el pasado de su padre Pau, desaparecido hace 20 años y al que todo el mundo daba ya por muerto. Cuenta con la ayuda de su primo hermano Diego, hijo del político valenciano fallecido y ahora convertido en un escritor errante que vive retirado. Juntos emprenderán a contrarreloj la búsqueda de Pau.",
+    "role": "Auxiliar de montaje - Grafismos",
+    "link": "https://youtu.be/wZGkKVFmmj8",
+    "img": "/images/ficcion/001desentierro.webp",
+    "width": "double"
+  },
+  {
+    "id": 2,
+    "title": "Desconocidas",
+    "type": "Serie de ficción",
+    "logline": "Desconocidas cuenta la historia de un grupo de mujeres cuyos respectivos y singulares caminos acaban coincidiendo en un mismo sitio. Un lugar lo suficientemente amplio para que todas quepan, lo suficientemente largo para que puedan perseguir sus sueños y lo suficientemente tortuoso para que alcanzarlos no les resulte fácil.",
+    "role": "Montaje - Grafismos",
+    "link": "https://www.youtube.com/watch?v=KNnO6IHsWUo",
+    "img": "/images/ficcion/002desconocidas.webp",
+    "width": "double"
+  },
+  {
+    "id": 3,
+    "title": "Dalí-Freud",
+    "type": "Video conceptual",
+    "logline": "Edición, VFX y grafismos del vídeo explicativo para la exposición «Dalí-Freud: una obsesión» en el Museo Belvedere de Viena",
+    "role": "Montaje - VFX",
+    "link": "https://www.belvedere.at/dali-freud",
+    "img": "/images/ficcion/003dalifreud.webp",
+    "width": "single"
+  },
+  {
+    "id": 4,
+    "title": "Sola no",
+    "type": "Cortometraje",
+    "logline": "Una anciana se escapa de casa en busca de silencio, para pasar sus últimos días en soledad, alejada de la sociedad moderna. Pero, su hija no la entiende y pensando que hace lo correcto, se niega a dejarla sola.",
+    "role": "Ayudante de montaje",
+    "link": "https://vimeo.com/776269926?fl=pl&fe=sh",
+    "img": "/images/ficcion/004solano.webp",
+    "width": "single"
+  },
+  {
+    "id": 5,
+    "title": "En record de Lupi",
+    "type": "Cortometraje",
+    "logline": "Pilar vive con dos compañeros de piso. Una mañana, la cobaya de Pilar aparece muerta en el suelo del patio de luces, y dado que era su cobaya y que es la que le regaló Lucia, su pareja hasta hace unas semanas, Pilar debe de estar destrozada. Pero en verdad Pilar está bien.",
+    "role": "Montaje",
+    "link": "https://vimeo.com/896161301?fl=pl&fe=sh",
+    "img": "/images/ficcion/005recordlupi.webp",
+    "width": "single"
+  },
+  {
+    "id": 6,
+    "title": "L'Alqueria Blanca",
+    "type": "Serie",
+    "logline": "La Hoya de Alcoy presencia la lucha de clases, poder y tierras entre los Falcó y los Pedreguer. Lo que podría resultar un pueblo tranquilo que vive de lo rural, la vida resulta verse más alborotada por las diferencias y amoríos entre las familias.",
+    "role": "Coordinador de montaje - Montaje",
+    "link": "https://youtu.be/GHFURJWlqto",
+    "img": "/images/ficcion/006alqueriablanca.webp",
+    "width": "full"
+  },
+  {
+    "id": 7,
+    "title": "900 días sin Anabel",
+    "type": "Serie documental",
+    "logline": "Esta serie documental para NETFLIX se narra en detalle el secuestro de Anabel Segura, un caso que conmocionó a España y se convirtió en el rapto más largo de su historia. La docuserie ofrece un testimonio inédito sobre los casi tres años de angustia vividos por la familia Segura y la sociedad española, que clamaba por la liberación de la joven desaparecida en 1993. Durante los 900 días que duró el secuestro, el caso mantuvo en vilo al país entero.",
+    "role": "Ayudante de montaje",
+    "link": "https://youtu.be/h4096r2JwTE",
+    "img": "/images/ficcion/007diasisabel.webp",
+    "width": "full"
+  },
+  {
+    "id": 8,
+    "title": "La Coleccionista",
+    "type": "Serie",
+    "logline": "Cada vez que el pueblo fronterizo de Reino del Duero recibe visitantes, Fátima, una misteriosa coleccionista que regenta la tienda de antigüedades, les obsequia con algún objeto de la misma. Gabri, un hippie trasnochado que coquetea demasiado con las drogas y Manuela, una madre de familia que no levanta cabeza desde que perdió a su hijo pequeño, son los más recientes depositarios de esa hospitalidad. No sospechan que los regalos de Fátima desencadenarán una serie de inquietantes y dramáticos sucesos paranormales.",
+    "role": "Ayudante de montaje",
+    "link": "https://youtu.be/gbZnw4fcr8A",
+    "img": "/images/ficcion/008coleccionista.webp",
+    "width": "double"
+  },
+  {
+    "id": 9,
+    "title": "El retorno de Júpiter",
+    "type": "Largometraje",
+    "logline": "Carlos y Carla, una pareja joven al borde del precipicio, decide pasar el fin de semana en un retiro espiritual, conocido como 'El Domo'. Al llegar, la pareja se encuentra con Aura y Lucio, un matrimonio descaradamente  new age , que promete ofrecerles una experiencia mágica, catártica, rompedora y, ¿por qué no?, peligrosa.",
+    "role": "Ayudante de montaje",
+    "link": null,
+    "img": "/images/ficcion/009jupiter.webp",
+    "width": "double"
+  }
+]
