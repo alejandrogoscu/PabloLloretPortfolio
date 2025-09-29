@@ -172,7 +172,7 @@ const Gallery = ({ items }) => {
               }}
               onClick={() => item.url && item.url !== '#' && window.open(item.url, '_blank', 'noopener')}
             >
-              <img className="gallery-img" src={item.img} alt={item.title} />
+              <img className="gallery-img" src={item.img} alt={item.title} loading="lazy" decoding="async" />
               <div className="item-overlay">
                 <h3>
                   <strong>{item.title}</strong> | {item.role}
