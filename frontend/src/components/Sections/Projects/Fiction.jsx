@@ -1,14 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Gallery from './Gallery';
-import ficcionData from '../../../../content/data/ficcion.json';
+import { useFiction } from '../../../context/FictionContext';
+import Spinner from '../../Common/Spinner/Spinner';
 import './Fiction.css';
 
 const Fiction = () => {
-  const [galleryItems, setGalleryItems] = useState([]);
+  const { fictions, loading, error, fetchFictions } = useFiction();
 
   useEffect(() => {
-    const formattedItems = ficcionData.map((item) => ({
-      id: item.id.toString(),
+    fetchFictions();
+  }, []);
+
+  const galleryItems = fictions
+    .slice()
+    .reverse()
+    .map((item) => ({
+      id: item._id,
       img: item.img,
       url: item.link || '#',
       width: item.width || 'single',
@@ -16,8 +23,6 @@ const Fiction = () => {
       role: item.role,
       type: item.type,
     }));
-    setGalleryItems(formattedItems);
-  }, []);
 
   return (
     <section className="fiction-section" id="fiction">
@@ -26,6 +31,9 @@ const Fiction = () => {
         <h2>Ficción</h2>
         <div className="title-line"></div>
       </div>
+
+      {loading && <Spinner />}
+      {error && <div>Error: {error}</div>}
 
       {galleryItems.length > 0 && (
         <Gallery

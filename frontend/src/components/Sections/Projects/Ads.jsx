@@ -1,23 +1,28 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Gallery from './Gallery';
-import adsData from '../../../../content/data/ads.json';
+import { useAds } from '../../../context/AdsContext';
+import Spinner from '../../Common/Spinner/Spinner';
 import './Ads.css';
 
 const Ads = () => {
-  const [galleryItems, setGalleryItems] = useState([]);
+  const { ads, loading, error, fetchAds } = useAds();
 
   useEffect(() => {
-    const formattedItems = adsData.map((item) => ({
-      id: item.id.toString(),
+    fetchAds();
+  }, []);
+
+  const galleryItems = ads
+    .slice()
+    .reverse()
+    .map((item) => ({
+      id: item._id,
       img: item.img,
       url: item.link || '#',
       width: item.width || 'single',
       title: item.title,
       role: item.role,
-      type: item.type,
+      type: ImageTrack.type,
     }));
-    setGalleryItems(formattedItems);
-  }, []);
 
   return (
     <section className="ads-section" id="ads">
@@ -26,6 +31,9 @@ const Ads = () => {
         <h2>Publicidad</h2>
         <div className="title-line"></div>
       </div>
+
+      {loading && <Spinner />}
+      {error && <div>Error: {error}</div>}
 
       {galleryItems.length > 0 && (
         <Gallery
