@@ -160,8 +160,9 @@ const Gallery = ({ items }) => {
   return (
     <div className={`horizontal-gallery ${isReady ? 'loaded' : 'loading'}`} ref={galleryRef}>
       <div className="gallery-track">
-        {organizedItems.map((item) => {
+        {organizedItems.map((item, idx) => {
           const columnSpan = getColumnSpan(item.width);
+          const isFirst = idx === 0;
 
           return (
             <div
@@ -172,7 +173,16 @@ const Gallery = ({ items }) => {
               }}
               onClick={() => item.url && item.url !== '#' && window.open(item.url, '_blank', 'noopener')}
             >
-              <img className="gallery-img" src={item.img} alt={item.title} loading="lazy" decoding="async" />
+              <img
+                className="gallery-img"
+                src={item.img}
+                alt={item.title}
+                loading={isFirst ? undefined : 'lazy'}
+                decoding="async"
+                fetchPriority={isFirst ? 'high' : 'auto'}
+                width={item.widthPx || 400}
+                height={item.heightPx || 225}
+              />
               <div className="item-overlay">
                 <h3>
                   <strong>{item.title}</strong> | {item.role}

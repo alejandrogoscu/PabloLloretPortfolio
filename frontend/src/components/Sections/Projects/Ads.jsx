@@ -21,7 +21,9 @@ const Ads = () => {
       width: item.width || 'single',
       title: item.title,
       role: item.role,
-      type: ImageTrack.type,
+      type: item.type,
+      widthPx: item.widthPX,
+      heightPx: item.heightPX,
     }));
 
   return (

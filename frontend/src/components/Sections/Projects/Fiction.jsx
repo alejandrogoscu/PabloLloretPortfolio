@@ -22,6 +22,8 @@ const Fiction = () => {
       title: item.title,
       role: item.role,
       type: item.type,
+      widthPx: item.widthPX,
+      heightPx: item.heightPX,
     }));
 
   return (
