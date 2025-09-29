@@ -1,5 +1,6 @@
 export const fictionInitialState = {
   fictions: [],
+  selectedFiction: null,
   loading: false,
   error: null,
 };
@@ -7,6 +8,7 @@ export const fictionInitialState = {
 export function fictionReducer(state, action) {
   switch (action.type) {
     case 'FETCH_START':
+    case 'GET_ONE_START':
     case 'CREATE_START':
     case 'UPDATE_START':
     case 'DELETE_START':
@@ -14,6 +16,9 @@ export function fictionReducer(state, action) {
 
     case 'FETCH_SUCCESS':
       return { ...state, loading: false, fictions: action.payload };
+
+    case 'GET_ONE_SUCCESS':
+      return { ...state, loading: false, selectedFiction: action.payload };
 
     case 'CREATE_SUCCESS':
       return { ...state, loading: false, fictions: [...state.fictions, action.payload] };
@@ -29,6 +34,7 @@ export function fictionReducer(state, action) {
       return { ...state, loading: false, fictions: state.fictions.filter((fiction) => fiction._id !== action.payload) };
 
     case 'FETCH_ERROR':
+    case 'GET_ONE_ERROR':
     case 'CREATE_ERROR':
     case 'UPDATE_ERROR':
     case 'DELETE_ERROR':
