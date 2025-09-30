@@ -5,12 +5,14 @@ import Ads from './components/Sections/Projects/Ads';
 import Bio from './components/Sections/About/Bio';
 import Skills from './components/Sections/About/Skills';
 import Contact from './components/Sections/Contact/Contact';
+import Login from './components/Admin/Login/Login';
 import './App.css';
 
 function App() {
   return (
     <>
       <CustomCursor />
+      <Login />
       <Layout>
         <Fiction />
         <Ads />

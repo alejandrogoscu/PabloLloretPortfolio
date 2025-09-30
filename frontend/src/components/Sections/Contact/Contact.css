@@ -115,7 +115,6 @@
   color: var(--white);
   font-family: var(--font-title);
   font-size: 1.2rem;
-  cursor: pointer;
   transition: background 0.3s;
 
   &:hover {
