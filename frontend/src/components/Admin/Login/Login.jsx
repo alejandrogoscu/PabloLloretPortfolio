@@ -16,7 +16,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('/api/admin/login', form);
+      const res = await axios.post('http://localhost:3000/api/admin/login', form);
       if (onLogin) onLogin(res.data.token);
       localStorage.setItem('adminToken', res.data.token);
       navigate('/admin/dashboard');
@@ -26,7 +26,7 @@ const Login = ({ onLogin }) => {
   };
 
   return (
-    <div className="login-bg">
+    <div className="login-container">
       <div className="section-title">
         <div className="title-line"></div>
         <h2>Admin Login</h2>

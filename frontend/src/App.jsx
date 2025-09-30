@@ -1,3 +1,4 @@
+import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout/Layout';
 import CustomCursor from './components/Common/CustomCursor/CustomCursor';
 import Fiction from './components/Sections/Projects/Fiction';
@@ -12,14 +13,21 @@ function App() {
   return (
     <>
       <CustomCursor />
-      <Login />
-      <Layout>
-        <Fiction />
-        <Ads />
-        <Bio />
-        <Skills />
-        <Contact />
-      </Layout>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <Fiction />
+              <Ads />
+              <Bio />
+              <Skills />
+              <Contact />
+            </Layout>
+          }
+        />
+        <Route path="/admin" element={<Login />} />
+      </Routes>
     </>
   );
 }
