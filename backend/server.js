@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
+import adminRoutes from './routes/admin.js';
 import adRoutes from './routes/ads.js';
 import fictionRoutes from './routes/fiction.js';
 
@@ -14,6 +15,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+app.use('/api/admin', adminRoutes);
 app.use('/api/ads', adRoutes);
 app.use('/api/fiction', fictionRoutes);
 
