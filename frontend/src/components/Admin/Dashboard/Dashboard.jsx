@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import CreateEditForm from './CreateEditForm';
+import DeleteConfirm from './DeleteConfirm';
 import './dashboard.css';
 
 const API_URL = import.meta.env.VITE_API_URL;
@@ -123,7 +125,68 @@ const Dashboard = () => {
             </div>
           )}
         </section>
+
+        <section className="accordion-section" aria-labelledby="ads-accordion">
+          <button
+            id="ads-accordion"
+            className="accordion-toggle"
+            onClick={() => setActiveAccordion(activeAccordion === 'ads' ? null : 'ads')}
+            aria-expanded={activeAccordion === 'ads'}
+          >
+            Publicidad
+          </button>
+
+          {activeAccordion === 'ads' && (
+            <div className="accordion-content">
+              <button className="create-btn" onClick={() => handleOpenCreate('ads')}>
+                Crear Publicidad
+              </button>
+
+              <ul>
+                {ads.map((ad) => (
+                  <li className="project-row" key={ad._id}>
+                    <span>{ad.title}</span>
+                    <button onClick={() => handleOpenEdit(ad, 'ads')}>Editar</button>
+                    <button onClick={() => handleOpenDelete(ad, 'ads')}>Borrar</button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </section>
       </div>
+
+      <aside className="modal-container" aria-modal="true" role="dialog">
+        {modal.open && (
+          <div className="modal-content">
+            <button className="close-btn" onClick={closeModal}>
+              Cerrar
+            </button>
+
+            {modal.type === 'create' && (
+              <CreateEditForm category={modal.category} onSubmit={createProject} onCancel={closeModal} />
+            )}
+
+            {modal.type === 'edit' && (
+              <CreateEditForm
+                category={modal.category}
+                initialData={modal.project}
+                onSubmit={(data) => editProject(modal.project._id, data, modal.category)}
+                onCancel={closeModal}
+              />
+            )}
+
+            {modal.type === 'delete' && (
+              <DeleteConfirm
+                project={modal.project}
+                category={modal.category}
+                onDelete={() => deleteProject(modal.project._id, modal.category)}
+                onCancel={closeModal}
+              />
+            )}
+          </div>
+        )}
+      </aside>
     </main>
   );
 };
