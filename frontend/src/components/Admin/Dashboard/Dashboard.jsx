@@ -20,7 +20,6 @@ const Dashboard = () => {
     } catch (error) {
       setError('Failed to fetch projects, Please try again later');
     }
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -105,6 +104,24 @@ const Dashboard = () => {
           >
             Ficción
           </button>
+
+          {activeAccordion === 'fiction' && (
+            <div className="accordion-content">
+              <button className="create-btn" onClick={() => handleOpenCreate('fiction')}>
+                Crear Ficcion
+              </button>
+
+              <ul>
+                {fictions.map((fiction) => (
+                  <li className="project-row" key={fiction._id}>
+                    <span>{fiction.title}</span>
+                    <button onClick={() => handleOpenEdit(fiction, 'fiction')}>Editar</button>
+                    <button onClick={() => handleOpenDelete(fiction, 'fiction')}>Borrar</button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
         </section>
       </div>
     </main>
