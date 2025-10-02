@@ -1,0 +1,118 @@
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 2rem;
+}
+
+.form-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--orange);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.form-input,
+.form-select {
+  padding: 0.75rem 1rem;
+  border: 2px solid color-mix(in srgb, var(--white) 20%, transparent);
+  border-radius: 0.375rem;
+  background-color: color-mix(in srgb, var(--white) 8%, transparent);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--orange);
+    background-color: color-mix(in srgb, var(--white) 12%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--orange) 20%, transparent);
+  }
+
+  &::placeholder {
+    color: color-mix(in srgb, var(--white) 60%, transparent);
+  }
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--white) 40%, transparent);
+  }
+}
+
+.form-select option {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.form-actions {
+  display: flex;
+  text-align: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid color-mix(in srgb, var(--white) 20%, transparent);
+}
+
+.submit-btn,
+.cancel-btn {
+  flex: 1;
+  justify-content: center;
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3 ease;
+  border: none;
+
+  &:focus {
+    outline: 2px solid var(--white);
+    outline-offset: 2px;
+  }
+}
+
+.submit-btn {
+  background-color: var(--orange);
+  color: var(--black);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--orange) 90%, var(--black));
+    transform: translateY(-1px);
+  }
+}
+
+.cancel-btn {
+  background-color: var(--grey);
+  color: var(--black);
+
+  &:hover {
+    background-color: color-mix(in srgb, var(--grey) 85%, var(--black));
+    transform: translateY(-1px);
+  }
+}
+
+/* ------ MEDIA QUERIES ------ */
+@media (max-width: 480px) {
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}

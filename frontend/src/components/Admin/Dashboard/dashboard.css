@@ -136,6 +136,7 @@
 
 .delete-btn {
   background-color: #dc2626;
+  color: var(--white);
 
   &:hover {
     transform: scale(1.1);

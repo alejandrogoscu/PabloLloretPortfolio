@@ -1,22 +1,30 @@
 import './deleteConfirm.css';
 
 const DeleteConfirm = ({ project, category, onDelete, onCancel }) => {
-  <div className="modal-delete">
-    <h3>¿Seguro que quieres borrar este proyecto?</h3>
-    <p>
-      <strong>
-        {project.title} ({category === 'fiction' ? 'Fiction' : 'Publicidad'})
-      </strong>
-    </p>
-    <div className="modal-actions">
-      <button className="detele-btn" onClick={onDelete}>
-        Borrar
-      </button>
-      <button type="button" onClick={onCancel}>
-        Cancelar
-      </button>
+  return (
+    <div className="modal-delete">
+      <div className="delete-icon">⚠️</div>
+
+      <h3 className="delete-title">¿Seguro que quieres borrar este proyecto?</h3>
+
+      <div className="delete-info">
+        <p className="project-details">
+          <strong>{project.title}</strong>
+        </p>
+
+        <p className="category-info">{category === 'fiction' ? 'Ficción' : 'Publicidad'}</p>
+      </div>
+
+      <div className="delete-actions">
+        <button className="confirm-delete-btn" onClick={onDelete}>
+          BORRAR
+        </button>
+        <button className="cancel-delete-btn" type="button" onClick={onCancel}>
+          Cancelar
+        </button>
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default DeleteConfirm;
