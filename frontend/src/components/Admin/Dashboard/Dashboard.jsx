@@ -96,6 +96,7 @@ const Dashboard = () => {
       </div>
 
       {error && <div className="dashboard-error">{error}</div>}
+
       <div className="accordion">
         <section className="accordion-section" aria-labelledby="fiction-accordion">
           <button
@@ -113,12 +114,18 @@ const Dashboard = () => {
                 Crear Ficcion
               </button>
 
-              <ul>
+              <ul className="project-list">
                 {fictions.map((fiction) => (
                   <li className="project-row" key={fiction._id}>
-                    <span>{fiction.title}</span>
-                    <button onClick={() => handleOpenEdit(fiction, 'fiction')}>Editar</button>
-                    <button onClick={() => handleOpenDelete(fiction, 'fiction')}>Borrar</button>
+                    <span className="project-title">{fiction.title}</span>
+                    <div className="project-actions">
+                      <button className="edit-btn" onClick={() => handleOpenEdit(fiction, 'fiction')}>
+                        Editar
+                      </button>
+                      <button className="delete-btn" onClick={() => handleOpenDelete(fiction, 'fiction')}>
+                        Borrar
+                      </button>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -142,12 +149,18 @@ const Dashboard = () => {
                 Crear Publicidad
               </button>
 
-              <ul>
+              <ul className="project-list">
                 {ads.map((ad) => (
                   <li className="project-row" key={ad._id}>
-                    <span>{ad.title}</span>
-                    <button onClick={() => handleOpenEdit(ad, 'ads')}>Editar</button>
-                    <button onClick={() => handleOpenDelete(ad, 'ads')}>Borrar</button>
+                    <span className="project-title">{ad.title}</span>
+                    <div className="project-actions">
+                      <button className="edit-btn" onClick={() => handleOpenEdit(ad, 'ads')}>
+                        Editar
+                      </button>
+                      <button className="delete-btn" onClick={() => handleOpenDelete(ad, 'ads')}>
+                        Borrar
+                      </button>
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -156,11 +169,11 @@ const Dashboard = () => {
         </section>
       </div>
 
-      <aside className="modal-container" aria-modal="true" role="dialog">
-        {modal.open && (
+      {modal.open && (
+        <aside className="modal-container" aria-modal="true" role="dialog">
           <div className="modal-content">
             <button className="close-btn" onClick={closeModal}>
-              Cerrar
+              X
             </button>
 
             {modal.type === 'create' && (
@@ -185,8 +198,8 @@ const Dashboard = () => {
               />
             )}
           </div>
-        )}
-      </aside>
+        </aside>
+      )}
     </main>
   );
 };

@@ -8,6 +8,7 @@ import Skills from './components/Sections/About/Skills';
 import Contact from './components/Sections/Contact/Contact';
 import Login from './components/Admin/Login/Login';
 import Dashboard from './components/Admin/Dashboard/Dashboard';
+import ProtectedRoute from './components/Admin/ProtectedRoute';
 import './App.css';
 
 function App() {
@@ -28,7 +29,14 @@ function App() {
           }
         />
         <Route path="/admin" element={<Login />} />
-        <Route path="/admin/dashboard" element={<Dashboard />} />
+        <Route
+          path="/admin/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </>
   );
