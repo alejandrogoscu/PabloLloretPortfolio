@@ -33,7 +33,7 @@ const Gallery = ({ items }) => {
   };
 
   const organizeItems = (items, columnsCount = 3) => {
-    const sortedItems = [...items].sort((a, b) => parseInt(b.id) - parseInt(a.id));
+    const sortedItems = [...items].sort((a, b) => a.order - b.order);
 
     if (columnsCount === 1) {
       return sortedItems;

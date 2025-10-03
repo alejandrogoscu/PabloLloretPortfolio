@@ -24,7 +24,9 @@ export const getFictionById = async (req, res) => {
 // CREATE FICTION
 export const createFiction = async (req, res) => {
   try {
-    const newFiction = new Fiction(req.body);
+    const lastFiction = await Fiction.findOne().sort({ order: -1 });
+    const nextOrder = lastFiction?.order ? lastFiction.order + 1 : 1;
+    const newFiction = new Fiction({ ...req.body, order: nextOrder });
     const savedFiction = await newFiction.save();
     res.status(201).json(savedFiction);
   } catch (error) {
@@ -46,9 +48,14 @@ export const updateFiction = async (req, res) => {
 // DELETE FICTION
 export const deleteFiction = async (req, res) => {
   try {
-    const deletedFiction = await Fiction.findByIdAndDelete(req.params.id);
-    if (!deletedFiction) return res.status(404).json({ message: 'Fiction project not found' });
-    res.json({ message: 'Fiction project deleted' });
+    const fictionToDelete = await Fiction.findById(req.params.id);
+    if (!fictionToDelete) return res.status(404).json({ message: 'Not found' });
+
+    await Fiction.findByIdAndDelete(req.params.id);
+
+    await Fiction.updateMany({ order: { $gt: fictionToDelete.order } }, { $inc: { order: -1 } });
+
+    res.json({ message: 'Fiction deleted and order updated' });
   } catch (error) {
     res.status(500).json({ message: 'Error deleting fiction project', error });
   }

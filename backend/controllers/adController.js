@@ -24,7 +24,9 @@ export const getAdById = async (req, res) => {
 // CREATE NEW AD
 export const createAd = async (req, res) => {
   try {
-    const newAd = new Ad(req.body);
+    const lastAd = await Ad.findOne().sort({ order: -1 });
+    const nextOrder = lastAd?.order ? lastAd.order + 1 : 1;
+    const newAd = new Ad({ ...req.body, order: nextOrder });
     const savedAd = await newAd.save();
     res.status(201).json(savedAd);
   } catch (error) {
@@ -46,9 +48,14 @@ export const updateAd = async (req, res) => {
 // DELETE AD
 export const deleteAd = async (req, res) => {
   try {
-    const deletedAd = await Ad.findByIdAndDelete(req.params.id);
-    if (!deletedAd) return res.status(404).json({ message: 'Ad not found' });
-    res.json({ message: 'Ad deleted' });
+    const adToDelete = await Ad.findById(req.params.id);
+    if (!adToDelete) return res.status(404).json({ message: 'Not found' });
+
+    await Ad.findByIdAndDelete(req.params.id);
+
+    await Ad.updateMany({ order: { $gt: adToDelete.order } }, { $inc: { order: -1 } });
+
+    await res.json({ message: 'Ad deleted and order updated' });
   } catch (error) {
     res.status(500).json({ message: 'Error deleting ad', error });
   }

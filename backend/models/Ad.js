@@ -8,6 +8,7 @@ const AdSchema = new mongoose.Schema(
     img: { type: String, required: true },
     width: { type: String, required: true },
     link: String,
+    order: Number,
   },
   { timestamps: true }
 );
