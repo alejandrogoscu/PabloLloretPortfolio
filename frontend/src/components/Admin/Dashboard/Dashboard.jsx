@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import CreateEditForm from './CreateEditForm';
 import DeleteConfirm from './DeleteConfirm';
@@ -7,6 +8,7 @@ import './dashboard.css';
 const API_URL = import.meta.env.VITE_API_URL;
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [fictions, setFictions] = useState([]);
   const [ads, setAds] = useState([]);
   const [activeAccordion, setActiveAccordion] = useState(null);
@@ -39,20 +41,22 @@ const Dashboard = () => {
       closeModal();
     } catch (error) {
       setError('Failed to create project. Please check your data and try again');
+      closeModal();
     }
   };
 
   const editProject = async (id, data, category) => {
     setError('');
     try {
-      const url = category === 'fiction' ? `${API_URL}/fiction` : `${API_URL}/ads`;
-      await axios.post(url, data, {
+      const url = category === 'fiction' ? `${API_URL}/fiction/${id}` : `${API_URL}/ads/${id}`;
+      await axios.put(url, data, {
         headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` },
       });
       fetchProjects();
       closeModal();
     } catch (error) {
       setError('Failed to edit project. Please check your data and try again');
+      closeModal();
     }
   };
 
@@ -67,6 +71,7 @@ const Dashboard = () => {
       closeModal();
     } catch {
       setError('Failed to delete project. Please try again.');
+      closeModal();
     }
   };
 
@@ -94,6 +99,10 @@ const Dashboard = () => {
         <h2>Admin Dashboard</h2>
         <div className="title-line"></div>
       </div>
+
+      <button className="go-home-btn" onClick={() => navigate('/')}>
+        Página principal
+      </button>
 
       {error && <div className="dashboard-error">{error}</div>}
 
