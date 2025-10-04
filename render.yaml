@@ -14,11 +14,11 @@ services:
       - key: FRONTEND_URL
         sync: false
 
-  - type: web
+  - type: static
     name: portfolio-frontend
     region: frankfurt
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
-      - keys: VITE_API_URL
+      - key: VITE_API_URL
         sync: false
