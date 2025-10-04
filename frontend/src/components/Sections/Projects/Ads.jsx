@@ -30,7 +30,7 @@ const Ads = () => {
     <section className="ads-section" id="ads">
       <div className="section-title">
         <div className="title-line"></div>
-        <h2>Clientes</h2>
+        <h2>Publicidad</h2>
         <div className="title-line"></div>
       </div>
 
