@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import useBackendReady from './hooks/useBackendReady';
-import LoadingScreen from './components/Common/LoadingScreen';
+import LoadingScreen from './components/Common/LoadingScreen/LoadingScreen.jsx';
 import Layout from './components/Layout/Layout';
 import CustomCursor from './components/Common/CustomCursor/CustomCursor';
 import Fiction from './components/Sections/Projects/Fiction';
