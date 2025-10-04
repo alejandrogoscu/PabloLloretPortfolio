@@ -1,4 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
+import useBackendReady from './hooks/useBackendReady';
+import LoadingScreen from './components/Common/LoadingScreen';
 import Layout from './components/Layout/Layout';
 import CustomCursor from './components/Common/CustomCursor/CustomCursor';
 import Fiction from './components/Sections/Projects/Fiction';
@@ -11,7 +13,13 @@ import Dashboard from './components/Admin/Dashboard/Dashboard';
 import ProtectedRoute from './components/Admin/ProtectedRoute';
 import './App.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 function App() {
+  const backendReady = useBackendReady([`${API_URL}/fiction``${API_URL}/ads`]);
+
+  if (!backendReady) return <LoadingScreen />;
+
   return (
     <>
       <CustomCursor />
