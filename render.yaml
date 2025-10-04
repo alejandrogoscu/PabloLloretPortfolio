@@ -14,9 +14,10 @@ services:
       - key: FRONTEND_URL
         sync: false
 
-  - type: static
+  - type: web
     name: portfolio-frontend
     region: frankfurt
+    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: frontend/dist
     envVars:
