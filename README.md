@@ -21,10 +21,10 @@ A modern, full-stack portfolio website for Pablo Lloret, a professional video ed
 ## Demo Screenshots
 
 <p align="center">
-  <img src="frontend/public/preview/preview01.webp" width="160" />
-  <img src="frontend/public/preview/preview02.webp" width="160" />
-  <img src="frontend/public/preview/preview03.webp" width="160" />
-  <img src="frontend/public/preview/preview04.webp" width="160" />
+  <img src="frontend/public/images/preview/preview01.webp" width="160" />
+  <img src="frontend/public/images/preview/preview02.webp" width="160" />
+  <img src="frontend/public/images/preview/preview03.webp" width="160" />
+  <img src="frontend/public/images/preview/preview04.webp" width="160" />
 </p>
 
 ---
