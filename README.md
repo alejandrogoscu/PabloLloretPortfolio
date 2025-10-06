@@ -1,5 +1,9 @@
 # Pablo Lloret Portfolio
 
+A modern, full-stack portfolio website for Pablo Lloret, a professional video editor. This project showcases his fiction and advertising work, biography, skills, and includes a secure admin dashboard for dynamic content management. Built with React, Node.js, and MongoDB, the site features engaging UI/UX, responsive design, and a contact form with email notifications.
+
+---
+
 ![Project Banner](/frontend/public/images/preview/preview01.webp) 
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
@@ -12,10 +16,16 @@
 
 [🔗 View Portfolio Online](https://pablolloret.onrender.com) 
 
-![Demo Screenshot 1](/frontend/public/images/preview/preview01.webp) 
-![Demo Screenshot 2](/frontend/public/images/preview/preview02.webp) 
-![Demo Screenshot 3](/frontend/public/images/preview/preview03.webp) 
-![Demo Screenshot 4](/frontend/public/images/preview/preview04.webp) 
+---
+
+## Demo Screenshots
+
+<p align="center">
+  <img src="frontend/public/preview/preview01.webp" width="160" />
+  <img src="frontend/public/preview/preview02.webp" width="160" />
+  <img src="frontend/public/preview/preview03.webp" width="160" />
+  <img src="frontend/public/preview/preview04.webp" width="160" />
+</p>
 
 ---
 
