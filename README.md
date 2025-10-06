@@ -1,6 +1,6 @@
 # Pablo Lloret Portfolio
 
-![Project Banner](./frontend/public/preview/preview01.webp) 
+![Project Banner](/frontend/public/preview/preview01.webp) 
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -12,10 +12,10 @@
 
 [🔗 View Portfolio Online](https://pablolloret.onrender.com) 
 
-![Demo Screenshot 1](./frontend/public/preview/preview01.webp) 
-![Demo Screenshot 2](./frontend/public/preview/preview02.webp) 
-![Demo Screenshot 3](./frontend/public/preview/preview03.webp) 
-![Demo Screenshot 4](./frontend/public/preview/preview04.webp) 
+![Demo Screenshot 1](/frontend/public/preview/preview01.webp) 
+![Demo Screenshot 2](/frontend/public/preview/preview02.webp) 
+![Demo Screenshot 3](/frontend/public/preview/preview03.webp) 
+![Demo Screenshot 4](/frontend/public/preview/preview04.webp) 
 
 ---
 
