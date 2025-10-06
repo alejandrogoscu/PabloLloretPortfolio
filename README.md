@@ -145,4 +145,4 @@ MIT
 
 ---
 
-**Developed & Maintained by Alejandro Goscu for Pablo Lloret’s portfolio.**
+**Developed & Maintained by [Alejandro Goscu](https://www.alejandrogoscu.es/) for Pablo Lloret’s portfolio.**
