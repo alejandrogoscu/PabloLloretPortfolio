@@ -1,6 +1,6 @@
 import { createContext, useReducer, useContext } from 'react';
 import axios from 'axios';
-import { adsReducer, adsInitialState } from './adsReducer.js';
+import { adsReducer, adsInitialState } from './spotsReducer.js';
 
 const AdsContext = createContext();
 const API_URL = import.meta.env.VITE_API_URL;

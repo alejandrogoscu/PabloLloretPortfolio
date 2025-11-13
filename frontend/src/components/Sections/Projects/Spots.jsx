@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import Gallery from './Gallery';
-import { useAds } from '../../../context/AdsContext';
+import { useAds } from '../../../context/SpotsContext';
 import Spinner from '../../Common/Spinner/Spinner';
-import './Ads.css';
+import './Spots.css';
 
-const Ads = () => {
+const Spots = () => {
   const { ads, loading, error, fetchAds } = useAds();
 
   useEffect(() => {
@@ -51,4 +51,4 @@ const Ads = () => {
   );
 };
 
-export default Ads;
+export default Spots;

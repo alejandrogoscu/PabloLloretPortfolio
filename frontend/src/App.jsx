@@ -4,7 +4,7 @@ import LoadingScreen from './components/Common/LoadingScreen/LoadingScreen.jsx';
 import Layout from './components/Layout/Layout';
 import CustomCursor from './components/Common/CustomCursor/CustomCursor';
 import Fiction from './components/Sections/Projects/Fiction';
-import Ads from './components/Sections/Projects/Ads';
+import Spots from './components/Sections/Projects/Spots';
 import Bio from './components/Sections/About/Bio';
 import Skills from './components/Sections/About/Skills';
 import Contact from './components/Sections/Contact/Contact';
@@ -29,7 +29,7 @@ function App() {
           element={
             <Layout>
               <Fiction />
-              <Ads />
+              <Spots />
               <Bio />
               <Skills />
               <Contact />
