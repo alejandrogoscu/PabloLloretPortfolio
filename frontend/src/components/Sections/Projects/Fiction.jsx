@@ -13,7 +13,7 @@ const Fiction = () => {
 
   const galleryItems = fictions
     .slice()
-    .reverse()
+    /* .reverse() */
     .map((item) => ({
       id: item._id,
       img: item.img,

@@ -13,7 +13,7 @@ const Spots = () => {
 
   const galleryItems = ads
     .slice()
-    .reverse()
+    /*  .reverse() */
     .map((item) => ({
       id: item._id,
       img: item.img,
