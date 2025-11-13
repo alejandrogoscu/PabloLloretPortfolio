@@ -24,6 +24,7 @@ const Spots = () => {
       type: item.type,
       widthPx: item.widthPX,
       heightPx: item.heightPX,
+      order: item.order,
     }));
 
   return (
