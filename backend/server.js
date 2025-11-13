@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import adminRoutes from './routes/admin.js';
-import adRoutes from './routes/ads.js';
+import adRoutes from './routes/spots.js';
 import fictionRoutes from './routes/fiction.js';
 
 dotenv.config();
