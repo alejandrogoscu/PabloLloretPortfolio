@@ -23,7 +23,7 @@ const Gallery = ({ items }) => {
 
   const scrollToTopOfSection = () => {
     const fictionSection = document.getElementById('fiction');
-    const adsSection = document.getElementById('ads');
+    const adsSection = document.getElementById('spots');
 
     if (fictionSection && fictionSection.contains(galleryRef.current)) {
       fictionSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
