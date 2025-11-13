@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './login.css';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 const Login = ({ onLogin }) => {
   const [form, setForm] = useState({ username: '', password: '' });
   const [error, setError] = useState('');
@@ -16,7 +18,7 @@ const Login = ({ onLogin }) => {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('http://localhost:3000/api/admin/login', form);
+      const res = await axios.post(`${API_URL}/admin/login`, form);
       if (onLogin) onLogin(res.data.token);
       localStorage.setItem('adminToken', res.data.token);
       navigate('/admin/dashboard');
