@@ -1,62 +1,62 @@
-import Ad from '../models/Ad.js';
+import Spot from '../models/Spot.js';
 
-// GET ALL ADS
-export const getAds = async (req, res) => {
+// GET ALL SPOTS
+export const getSpots = async (req, res) => {
   try {
-    const ads = await Ad.find();
-    res.json(ads);
+    const spots = await Spot.find();
+    res.json(spots);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching ads', error });
+    res.status(500).json({ message: 'Error fetching spots', error });
   }
 };
 
 // GET AD BY ID
-export const getAdById = async (req, res) => {
+export const getSpotById = async (req, res) => {
   try {
-    const ad = await Ad.findById(req.params.id);
-    if (!ad) return res.status(404).json({ message: 'Ad not found' });
-    res.json(ad);
+    const spot = await Spot.findById(req.params.id);
+    if (!spot) return res.status(404).json({ message: 'Spot not found' });
+    res.json(spot);
   } catch (error) {
-    res.status(500).json({ message: 'Error fetching ad', error });
+    res.status(500).json({ message: 'Error fetching spot', error });
   }
 };
 
 // CREATE NEW AD
-export const createAd = async (req, res) => {
+export const createSpot = async (req, res) => {
   try {
-    const lastAd = await Ad.findOne().sort({ order: -1 });
-    const nextOrder = lastAd?.order ? lastAd.order + 1 : 1;
-    const newAd = new Ad({ ...req.body, order: nextOrder });
-    const savedAd = await newAd.save();
-    res.status(201).json(savedAd);
+    const lastSpot = await Spot.findOne().sort({ order: -1 });
+    const nextOrder = lastSpot?.order ? lastSpot.order + 1 : 1;
+    const newSpot = new Spot({ ...req.body, order: nextOrder });
+    const savedSpot = await newSpot.save();
+    res.status(201).json(savedSpot);
   } catch (error) {
-    res.status(400).json({ message: 'Error creating ad', error });
+    res.status(400).json({ message: 'Error creating spot', error });
   }
 };
 
 // UPDATE AD
-export const updateAd = async (req, res) => {
+export const updateSpot = async (req, res) => {
   try {
-    const updatedAd = await Ad.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!updatedAd) return res.status(404).json({ message: 'Ad not found' });
-    res.json(updatedAd);
+    const updatedSpot = await Spot.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (!updatedSpot) return res.status(404).json({ message: 'Spot not found' });
+    res.json(updatedSpot);
   } catch (error) {
-    res.status(400).json({ message: 'Error updating ad', error });
+    res.status(400).json({ message: 'Error updating spot', error });
   }
 };
 
 // DELETE AD
-export const deleteAd = async (req, res) => {
+export const deleteSpot = async (req, res) => {
   try {
-    const adToDelete = await Ad.findById(req.params.id);
-    if (!adToDelete) return res.status(404).json({ message: 'Not found' });
+    const spotToDelete = await Spot.findById(req.params.id);
+    if (!spotToDeleteToDelete) return res.status(404).json({ message: 'Not found' });
 
-    await Ad.findByIdAndDelete(req.params.id);
+    await Spot.findByIdAndDelete(req.params.id);
 
-    await Ad.updateMany({ order: { $gt: adToDelete.order } }, { $inc: { order: -1 } });
+    await Spot.updateMany({ order: { $gt: spotToDelete.order } }, { $inc: { order: -1 } });
 
-    await res.json({ message: 'Ad deleted and order updated' });
+    await res.json({ message: 'Spot deleted and order updated' });
   } catch (error) {
-    res.status(500).json({ message: 'Error deleting ad', error });
+    res.status(500).json({ message: 'Error deleting spot', error });
   }
 };

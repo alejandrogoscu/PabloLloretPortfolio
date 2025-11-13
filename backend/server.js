@@ -4,7 +4,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 
 import adminRoutes from './routes/admin.js';
-import adRoutes from './routes/spots.js';
+import spotRoutes from './routes/spots.js';
 import fictionRoutes from './routes/fiction.js';
 
 dotenv.config();
@@ -21,7 +21,7 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/admin', adminRoutes);
-app.use('/api/ads', adRoutes);
+app.use('/api/spot', spotRoutes);
 app.use('/api/fiction', fictionRoutes);
 
 mongoose

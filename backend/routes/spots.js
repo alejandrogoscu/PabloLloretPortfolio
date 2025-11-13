@@ -1,13 +1,13 @@
 import express from 'express';
-import { getAds, getAdById, createAd, updateAd, deleteAd } from '../controllers/adController.js';
+import { getSpots, getSpotById, createSpot, updateSpot, deleteSpot } from '../controllers/spotsController.js';
 import { verifyAdmin } from '../middleware/auth.js';
 
 const router = express.Router();
 
-router.get('/', getAds);
-router.get('/:id', getAdById);
-router.post('/', verifyAdmin, createAd);
-router.put('/:id', verifyAdmin, updateAd);
-router.delete('/:id', verifyAdmin, deleteAd);
+router.get('/', getSpots);
+router.get('/:id', getSpotById);
+router.post('/', verifyAdmin, createSpot);
+router.put('/:id', verifyAdmin, updateSpot);
+router.delete('/:id', verifyAdmin, deleteSpot);
 
 export default router;
