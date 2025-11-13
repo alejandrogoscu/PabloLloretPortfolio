@@ -27,7 +27,7 @@ const Spots = () => {
     }));
 
   return (
-    <section className="ads-section" id="ads">
+    <section className="spots-section" id="spots">
       <div className="section-title">
         <div className="title-line"></div>
         <h2>Spots</h2>
