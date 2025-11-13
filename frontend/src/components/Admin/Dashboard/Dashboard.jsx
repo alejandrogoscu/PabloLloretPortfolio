@@ -18,7 +18,7 @@ const Dashboard = () => {
   const fetchProjects = async () => {
     setError('');
     try {
-      const [fictionRes, adsRes] = await Promise.all([axios.get(`${API_URL}/fiction`), axios.get(`${API_URL}/ads`)]);
+      const [fictionRes, adsRes] = await Promise.all([axios.get(`${API_URL}/fiction`), axios.get(`${API_URL}/spot`)]);
       setFictions(fictionRes.data);
       setAds(adsRes.data);
     } catch (error) {
@@ -33,7 +33,7 @@ const Dashboard = () => {
   const createProject = async (data, category) => {
     setError('');
     try {
-      const url = category === 'fiction' ? `${API_URL}/fiction` : `${API_URL}/ads`;
+      const url = category === 'fiction' ? `${API_URL}/fiction` : `${API_URL}/spot`;
       await axios.post(url, data, {
         headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` },
       });
@@ -48,7 +48,7 @@ const Dashboard = () => {
   const editProject = async (id, data, category) => {
     setError('');
     try {
-      const url = category === 'fiction' ? `${API_URL}/fiction/${id}` : `${API_URL}/ads/${id}`;
+      const url = category === 'fiction' ? `${API_URL}/fiction/${id}` : `${API_URL}/spot/${id}`;
       await axios.put(url, data, {
         headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` },
       });
@@ -63,7 +63,7 @@ const Dashboard = () => {
   const deleteProject = async (id, category) => {
     setError('');
     try {
-      const url = category === 'fiction' ? `${API_URL}/fiction/${id}` : `${API_URL}/ads/${id}`;
+      const url = category === 'fiction' ? `${API_URL}/fiction/${id}` : `${API_URL}/spot/${id}`;
       await axios.delete(url, {
         headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` },
       });
@@ -142,19 +142,19 @@ const Dashboard = () => {
           )}
         </section>
 
-        <section className="accordion-section" aria-labelledby="ads-accordion">
+        <section className="accordion-section" aria-labelledby="spot-accordion">
           <button
-            id="ads-accordion"
+            id="spot-accordion"
             className="accordion-toggle"
-            onClick={() => setActiveAccordion(activeAccordion === 'ads' ? null : 'ads')}
-            aria-expanded={activeAccordion === 'ads'}
+            onClick={() => setActiveAccordion(activeAccordion === 'spot' ? null : 'spot')}
+            aria-expanded={activeAccordion === 'spot'}
           >
             Publicidad
           </button>
 
-          {activeAccordion === 'ads' && (
+          {activeAccordion === 'spot' && (
             <div className="accordion-content">
-              <button className="create-btn" onClick={() => handleOpenCreate('ads')}>
+              <button className="create-btn" onClick={() => handleOpenCreate('spot')}>
                 Crear Publicidad
               </button>
 
@@ -163,10 +163,10 @@ const Dashboard = () => {
                   <li className="project-row" key={ad._id}>
                     <span className="project-title">{ad.title}</span>
                     <div className="project-actions">
-                      <button className="edit-btn" onClick={() => handleOpenEdit(ad, 'ads')}>
+                      <button className="edit-btn" onClick={() => handleOpenEdit(ad, 'spot')}>
                         Editar
                       </button>
-                      <button className="delete-btn" onClick={() => handleOpenDelete(ad, 'ads')}>
+                      <button className="delete-btn" onClick={() => handleOpenDelete(ad, 'spot')}>
                         Borrar
                       </button>
                     </div>
