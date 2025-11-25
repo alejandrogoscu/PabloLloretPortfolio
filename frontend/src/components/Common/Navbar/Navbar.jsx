@@ -17,7 +17,7 @@ const Navbar = ({ className = '', ease = 'power3.out' }) => {
       textColor: 'var(--blue)',
       links: [
         { label: 'Ficción', href: '#fiction', ariaLabel: 'Ver proyectos de ficción' },
-        { label: 'Publicidad', href: '#ads', ariaLabel: 'Ver proyectos de Publicidad' },
+        { label: 'Publicidad', href: '#spots', ariaLabel: 'Ver proyectos de Publicidad' },
       ],
     },
     {
