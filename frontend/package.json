@@ -14,8 +14,8 @@
     "framer-motion": "12.23.15",
     "gsap": "3.13.0",
     "nodemailer": "7.0.11",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
     "react-icons": "5.5.0",
     "react-router-dom": "^7.9.3"
   },
